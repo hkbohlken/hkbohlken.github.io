@@ -174,7 +174,7 @@ h2.about-bigtitle-number {
 }
 
 .about-four-boxes-imgcol {
-	background: url("./images/project2.jpg") center top / cover;
+	background: url("/wp-content/plugins/one-page-express-companion/theme-data/one-page-express/sections/images/project2.jpg") center top / cover;
 	float: none;
 	min-height: 300px;
 	padding-left: 15px;
@@ -193,7 +193,7 @@ h2.about-bigtitle-number {
 }
 
 .about-four-boxes-imgcol2 {
-	background: url("./images/project1.jpg") center top / cover;
+	background: url("/wp-content/plugins/one-page-express-companion/theme-data/one-page-express/sections/images/project1.jpg") center top / cover;
 	float: none;
 	min-height: 300px;
 	padding-left: 15px;
@@ -277,7 +277,7 @@ img.about-images-right-leftimg {
 }
 
 .about-text-grid-imgcol {
-	background: url("./images/project2.jpg") left top / cover;
+	background: url("/wp-content/plugins/one-page-express-companion/theme-data/one-page-express/sections/images/project2.jpg") left top / cover;
 	float: none;
 	padding-left: 15px;
 	padding-right: 15px;
@@ -297,7 +297,7 @@ img.about-images-right-leftimg {
 }
 
 .about-text-grid-imgcol2 {
-	background: url("./images/project1.jpg") left top / cover;
+	background: url("/wp-content/plugins/one-page-express-companion/theme-data/one-page-express/sections/images/project1.jpg") left top / cover;
 	float: none;
 	min-height: 300px;
 	width: 100%;
@@ -643,7 +643,7 @@ span.wpcf7-not-valid-tip {
 .content-full-left-image-imgcol,.content-full-right-image-imgcol {
 	-moz-box-shadow: 0 15px 80px -5px rgba(0, 0, 0, .25);
 	-webkit-box-shadow: 0 15px 80px -5px rgba(0, 0, 0, .25);
-	background: url("./images/full-height-column.jpg") center center / cover scroll transparent;
+	background: url("/wp-content/plugins/one-page-express-companion/theme-data/one-page-express/sections/images/full-height-column.jpg") center center / cover scroll transparent;
 	box-shadow: 0 15px 80px -5px rgba(0, 0, 0, .25);
 	min-height: 300px;
 	width: auto;
@@ -1230,7 +1230,7 @@ img.features-image-cards-featimg {
 }
 
 .features-small-image-cards-imgcol {
-	background: url("./images/rodion-kutsaev-184298-1920x1280.jpg") left top / cover;
+	background: url("/wp-content/plugins/one-page-express-companion/theme-data/one-page-express/sections/images/rodion-kutsaev-184298-1920x1280.jpg") left top / cover;
 	float: left;
 	min-height: 180px;
 	padding-left: 15px;
