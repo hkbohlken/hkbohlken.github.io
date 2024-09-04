@@ -1,0 +1,16 @@
+.equation {
+    font-size: 3em;
+    text-align: center;
+    margin-top: 20%;
+}
+.explanation {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 3em;
+    color: #333;
+    display: none;
+}
+.highlight {
+    color: #007bff;
+    cursor: pointer;
+}
