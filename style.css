@@ -1,16 +1,233 @@
-.equation {
-    font-size: 3em;
-    text-align: center;
-    margin-top: 20%;
+@keyframes spaceAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
 }
-.explanation {
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes entropyAnimation {
+    0% {
+        background-image: url('entropysprite1.png');
+    }
+    16.67% {
+        background-image: url('entropysprite2.png');
+    }
+    33.33% {
+        background-image: url('entropysprite3.png');
+    }
+    50% {
+        background-image: url('entropysprite4.png');
+    }
+    66.67% {
+        background-image: url('entropysprite5.png');
+    }
+    83.33% {
+        background-image: url('entropysprite6.png');
+    }
+    100% {
+        background-image: url('entropysprite1.png');
+    }
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    animation: spaceAnimation 30s linear infinite;
+    background: linear-gradient(135deg, #0d0647, rgb(42, 12, 97), #30024e);
+    background-size: 600% 600%;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    position: relative;
+    transition: background 30s linear;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: transparent;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: none;
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.container {
     text-align: center;
-    margin-top: 20px;
-    font-size: 3em;
-    color: #333;
+    padding: 20px;
+}
+
+#roulette-wheel {
+    width: 100%;
+    max-width: 256px;
+    height: auto;
+    border: 3px solid #fff;
+    border-radius: 8px;
+    margin-bottom: 20px;
     display: none;
 }
-.highlight {
-    color: #007bff;
+
+#content {
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+#entropy-animation {
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    animation: entropyAnimation 2s steps(6) infinite;
+    display: none;
+    margin: 0 auto;
+    position: relative;
+}
+
+button {
+    padding: 6px 24px;
+    margin: 15px;
+    font-family: "Mate SC", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    background-color: #004080;
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 96px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-family: "Mate SC", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow: 2px 2px 4px black;
+    animation: float 5s ease-in-out infinite;
+}
+
+.subtitle {
+    font-size: 24px;
+    font-family: 'Playfair Display SC', serif;
+    color: #fff;
+    margin-top: 0;
+}
+
+.italic {
+    font-style: italic;
+    font-size: 24px;
+    font-family: 'Playfair Display SC', serif;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 60px;
+    padding-left: 400px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    animation-delay: 1s;
+}
+
+.textbody {
+    margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 20px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 18px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    #roulette-wheel {
+        max-width: 100px;
+    }
 }

@@ -1,8 +1,36 @@
-<div class="equation">
-    <span class="lim">lim<sub>n→∞</sub></span>
-    <span class="P">(P</span>
-    <span class="E">(E<sub>n</sub>)</span>
-    <span class="equals">=</span>
-    <span class="one">1</span>
-</div>
-<div class="explanation"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boltzmann's Hypothesis Expanded</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="title">Boltzmann's Hypothesis Expanded</div>
+        <div class="subtitle">"Reality is not always probable,</div>
+        <div class="italic">or likely."</div>
+        <div class="buttons">
+            <button id="time-btn" data-type="time">Time</button>
+            <button id="entropy-btn" data-type="entropy">Entropy</button>
+        </div>
+        <div id="content">
+            <img id="roulette-wheel" class="animation time" src="wheelsprite1.png" alt="Roulette Wheel" data-type="time">
+            <div id="entropy-animation" class="animation entropy" data-type="entropy">
+                <div class="entropy-frame"></div>
+            </div>
+        </div>
+        <div class="control-buttons">
+            <button id="start-btn" style="display: none;">Start</button>
+            <button id="stop-btn" style="display: none;">Stop</button>
+        </div>
+    </div>
+</body>
+</html>
