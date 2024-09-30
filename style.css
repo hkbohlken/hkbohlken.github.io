@@ -81,9 +81,9 @@ body::before {
     height: 100%;
     pointer-events: none;
     background: url('stars.png') repeat;
-    opacity: 0.8; /* Adjust opacity for visibility */
+    opacity: 0.8;
     z-index: 0;
-    animation: spaceAnimation 20s linear infinite; /* Animation for the star background */
+    animation: spaceAnimation 20s linear infinite;
 }
 
 body::after {
@@ -140,15 +140,15 @@ body::after {
     border-radius: 8px;
     margin-bottom: 20px;
     display: none;
-    position: relative; /* Ensuring stacking context */
-    z-index: 2; /* Ensure it stays above the star background */
+    position: relative;
+    z-index: 2;
 }
 
 #content {
     text-align: center;
     position: relative;
     width: 100%;
-    z-index: 3; /* Ensure it stays above the star background */
+    z-index: 3;
 }
 
 #entropy-animation {
@@ -158,8 +158,8 @@ body::after {
     animation: entropyAnimation 2s steps(6) infinite;
     display: none;
     margin: 0 auto;
-    position: relative; /* Ensuring stacking context */
-    z-index: 2; /* Ensure it stays above the star background */
+    position: relative;
+    z-index: 2;
 }
 
 button {
@@ -176,8 +176,8 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative; /* Ensuring stacking context */
-    z-index: 3; /* Ensure it stays above the star background */
+    position: relative;
+    z-index: 3;
 }
 
 button:hover {
@@ -201,31 +201,29 @@ button:active {
     text-shadow: 2px 2px 4px black;
 }
 
-
-
 @keyframes expandAnimation {
     0% {
         transform: scaleX(1);
     }
     50% {
-        transform: scaleX(1.25); /* Expand to 1.5x */
+        transform: scaleX(1.25);
     }
     100% {
-        transform: scaleX(1); /* Return to original size */
+        transform: scaleX(1);
     }
 }
 
 .expanded {
-    display: inline-block; /* Makes it an inline-block for width adjustments */
-    font-size: 96px; /* Adjust size as needed */
-    color: #fff; /* Ensure it's visible */
-    text-align: center; /* Center the text */
-    overflow: hidden; /* Hide overflow for animation */
-    white-space: nowrap; /* Prevent wrapping */
+    display: inline-block;
+    font-size: 96px;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
     text-shadow: 2px 2px 4px black;
     font-family: "Mate SC", serif;
     font-weight: 400;
-    animation: expandAnimation 12s ease-in-out infinite; /* Combine separate animations */
+    animation: expandAnimation 12s ease-in-out infinite;
 }
 
 .subtitle {
@@ -249,13 +247,13 @@ button:active {
     font-family: 'Playfair Display SC', serif;
     color: #fff;
     margin-top: 0;
-    max-width: 400px; /* To limit the width and give it a more square shape */
-    padding-left: 50px; /* Move to the left side */
-    text-align: left; /* Align text to the left */
+    max-width: 400px;
+    padding-left: 50px;
+    text-align: left;
     letter-spacing: 2px;
     opacity: 0;
     animation: fadeIn 2s forwards;
-    animation-delay: 4s; /* Delayed appearance */
+    animation-delay: 4s;
 }
 
 .textbody {
@@ -297,22 +295,22 @@ button:active {
 }
 
 .fade-letter {
-    display: inline-block; /* Allow each letter to be inline and positionable */
-    opacity: 0; /* Start with 0 opacity */
-    transition: opacity 1.5s ease-in-out; /* Smooth fade-in transition */
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
 }
 
 .lvbexplained {
-    visibility: hidden; /* Hide initially */
-    opacity: 0; /* Start fully transparent */
+    visibility: hidden;
+    opacity: 0;
     margin-top: 50px;
     text-align: left;
     padding-right: 500px;
 }
 
 #interactButton {
-    margin-left: auto; /* Space between the text and button */
-    cursor: pointer; /* Changes cursor to indicate it's clickable */
+    margin-left: auto;
+    cursor: pointer;
     margin-right: 20px;
 }
 
@@ -322,5 +320,5 @@ button:active {
 
 .lvb-container {
     display: flex;
-    align-items: center; /* Vertically align text and button */
+    align-items: center;
 }
