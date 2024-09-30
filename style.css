@@ -63,15 +63,13 @@
 
 body {
     margin: 0;
-    height: 100vh;
-    overflow: hidden;
+    overflow: auto;
     animation: spaceAnimation 30s linear infinite;
     background: linear-gradient(135deg, #0d0647, rgb(42, 12, 97), #30024e);
     background-size: 600% 600%;
     color: #fff;
     font-family: Arial, sans-serif;
     position: relative;
-    transition: background 30s linear;
 }
 
 body::before {
@@ -82,7 +80,10 @@ body::before {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    background: transparent;
+    background: url('stars.png') repeat;
+    opacity: 0.8; /* Adjust opacity for visibility */
+    z-index: 0;
+    animation: spaceAnimation 20s linear infinite; /* Animation for the star background */
 }
 
 body::after {
@@ -97,11 +98,33 @@ body::after {
     z-index: -1;
 }
 
+@keyframes drift {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(1px, 1px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+
 .star {
     position: absolute;
     border-radius: 50%;
     background: white;
     box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+    animation-name: twinkle;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-name: twinkle, drift;
+    animation-duration: var(--twinkle-duration), var(--drift-duration);
+    animation-delay: var(--twinkle-delay), var(--drift-delay);
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    will-change: opacity, transform;
 }
 
 .container {
@@ -117,12 +140,15 @@ body::after {
     border-radius: 8px;
     margin-bottom: 20px;
     display: none;
+    position: relative; /* Ensuring stacking context */
+    z-index: 2; /* Ensure it stays above the star background */
 }
 
 #content {
     text-align: center;
     position: relative;
     width: 100%;
+    z-index: 3; /* Ensure it stays above the star background */
 }
 
 #entropy-animation {
@@ -132,7 +158,8 @@ body::after {
     animation: entropyAnimation 2s steps(6) infinite;
     display: none;
     margin: 0 auto;
-    position: relative;
+    position: relative; /* Ensuring stacking context */
+    z-index: 2; /* Ensure it stays above the star background */
 }
 
 button {
@@ -149,6 +176,8 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensuring stacking context */
+    z-index: 3; /* Ensure it stays above the star background */
 }
 
 button:hover {
@@ -165,20 +194,44 @@ button:active {
 
 .title {
     font-size: 96px;
-    margin-bottom: 10px;
     color: #fff;
     font-family: "Mate SC", serif;
     font-weight: 400;
     font-style: normal;
     text-shadow: 2px 2px 4px black;
-    animation: float 5s ease-in-out infinite;
+}
+
+
+
+@keyframes expandAnimation {
+    0% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(1.25); /* Expand to 1.5x */
+    }
+    100% {
+        transform: scaleX(1); /* Return to original size */
+    }
+}
+
+.expanded {
+    display: inline-block; /* Makes it an inline-block for width adjustments */
+    font-size: 96px; /* Adjust size as needed */
+    color: #fff; /* Ensure it's visible */
+    text-align: center; /* Center the text */
+    overflow: hidden; /* Hide overflow for animation */
+    white-space: nowrap; /* Prevent wrapping */
+    text-shadow: 2px 2px 4px black;
+    font-family: "Mate SC", serif;
+    font-weight: 400;
+    animation: expandAnimation 12s ease-in-out infinite; /* Combine separate animations */
 }
 
 .subtitle {
     font-size: 24px;
     font-family: 'Playfair Display SC', serif;
     color: #fff;
-    margin-top: 0;
 }
 
 .italic {
@@ -187,15 +240,26 @@ button:active {
     font-family: 'Playfair Display SC', serif;
     color: #fff;
     margin-top: 0;
-    margin-bottom: 60px;
-    padding-left: 400px;
+    margin-bottom: 75px;
+}
+
+.italicquote1 {
+    font-style: italic;
+    font-size: 24px;
+    font-family: 'Playfair Display SC', serif;
+    color: #fff;
+    margin-top: 0;
+    max-width: 400px; /* To limit the width and give it a more square shape */
+    padding-left: 50px; /* Move to the left side */
+    text-align: left; /* Align text to the left */
+    letter-spacing: 2px;
     opacity: 0;
     animation: fadeIn 2s forwards;
-    animation-delay: 1s;
+    animation-delay: 4s; /* Delayed appearance */
 }
 
 .textbody {
-    margin-bottom: 50px;
+    margin-bottom: 5px;
 }
 
 @media (max-width: 768px) {
@@ -230,4 +294,33 @@ button:active {
     #roulette-wheel {
         max-width: 100px;
     }
+}
+
+.fade-letter {
+    display: inline-block; /* Allow each letter to be inline and positionable */
+    opacity: 0; /* Start with 0 opacity */
+    transition: opacity 1.5s ease-in-out; /* Smooth fade-in transition */
+}
+
+.lvbexplained {
+    visibility: hidden; /* Hide initially */
+    opacity: 0; /* Start fully transparent */
+    margin-top: 50px;
+    text-align: left;
+    padding-right: 500px;
+}
+
+#interactButton {
+    margin-left: auto; /* Space between the text and button */
+    cursor: pointer; /* Changes cursor to indicate it's clickable */
+    margin-right: 20px;
+}
+
+#time-btn, #entropy-btn {
+    display: none;
+}
+
+.lvb-container {
+    display: flex;
+    align-items: center; /* Vertically align text and button */
 }
