@@ -110,15 +110,11 @@ body::after {
     }
 }
 
-
 .star {
     position: absolute;
     border-radius: 50%;
     background: white;
     box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
-    animation-name: twinkle;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
     animation-name: twinkle, drift;
     animation-duration: var(--twinkle-duration), var(--drift-duration);
     animation-delay: var(--twinkle-delay), var(--drift-delay);
@@ -127,9 +123,54 @@ body::after {
     will-change: opacity, transform;
 }
 
-.container {
-    text-align: center;
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     padding: 20px;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.lvb-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 2;
+    margin-bottom: 20px;
+}
+
+.interaction-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 20px;
+    position: absolute;
 }
 
 #roulette-wheel {
@@ -142,13 +183,7 @@ body::after {
     display: none;
     position: relative;
     z-index: 2;
-}
-
-#content {
-    text-align: center;
-    position: relative;
-    width: 100%;
-    z-index: 3;
+    margin-top: 350px;
 }
 
 #entropy-animation {
@@ -157,14 +192,16 @@ body::after {
     background-size: cover;
     animation: entropyAnimation 2s steps(6) infinite;
     display: none;
-    margin: 0 auto;
     position: relative;
     z-index: 2;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 350px;
+    margin-bottom: 0;
 }
 
 button {
     padding: 6px 24px;
-    margin: 15px;
     font-family: "Mate SC", serif;
     font-weight: 400;
     font-style: normal;
@@ -260,40 +297,6 @@ button:active {
     margin-bottom: 5px;
 }
 
-@media (max-width: 768px) {
-    .title {
-        font-size: 20px;
-    }
-
-    .subtitle {
-        font-size: 18px;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 10px 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .title {
-        font-size: 18px;
-    }
-
-    .subtitle {
-        font-size: 16px;
-    }
-
-    button {
-        font-size: 12px;
-        padding: 8px 16px;
-    }
-
-    #roulette-wheel {
-        max-width: 100px;
-    }
-}
-
 .fade-letter {
     display: inline-block;
     opacity: 0;
@@ -305,20 +308,213 @@ button:active {
     opacity: 0;
     margin-top: 50px;
     text-align: left;
-    padding-right: 500px;
+    margin-bottom: 20px;
+    max-width: 800px;
+    overflow-y: auto;
+    max-height: 60vh;
 }
 
 #interactButton {
-    margin-left: auto;
+    align-self: flex-end;
     cursor: pointer;
-    margin-right: 20px;
+    margin-top: 64px;
+    margin-right: 150px;
+    width: 256px;
+    padding: 32px;
+    font-size: 32px;
+    border-radius: 64px;
+    font-weight: bolder;
+    font-family: "Gotu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border: none; 
+    color: white;
+    background: linear-gradient(45deg, #007bff, #0056b3, #004080); 
+    background-size: 300% 300%;
+    animation: gradientAnimation 3s ease infinite; 
+    position: absolute;
+}
+
+#interactButton:hover {
+    background-color: #0056b3;
+}
+
+#interactButton:active {
+    background-color: #004080;
+    box-shadow: 0 5px #1f1e1e;
+    transform: translateY(4px);
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 #time-btn, #entropy-btn {
     display: none;
+    width: 256px;
+}
+#entropy-btn {
+    margin-top: 200px;
+
+}
+@media (max-width: 768px) {
+    .title {
+        font-size: 48px;
+    }
+
+    .expanded {
+        font-size: 48px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+
+    .lvb-container {
+        align-items: center;
+    }
+
+    .lvbexplained {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    #interactButton {
+        align-self: center;
+    }
 }
 
-.lvb-container {
+@media (max-width: 480px) {
+    .title {
+        font-size: 36px;
+    }
+
+    .expanded {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    #roulette-wheel {
+        max-width: 200px;
+    }
+
+    #entropy-animation {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.control-buttons {
+    margin-left: 1300px;
+    margin-top: 32px;
+}
+
+#time-btn {
+    margin-left: 100px;
+    margin-right: 32px;
+}
+
+.common-button {
+    align-self: flex-end;
+    cursor: pointer;
+    padding: 24px;
+    font-size: 32px;
+    border-radius: 64px;
+    font-weight: bolder;
+    font-family: "Gotu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border: none;
+    color: white; 
+    background: linear-gradient(45deg, #007bff, #0056b3, #004080); 
+    background-size: 300% 300%;
+    animation: gradientAnimation 3s ease infinite; 
+}
+
+.common-button:hover {
+    background-color: #0056b3;
+}
+
+.common-button:active {
+    background-color: #004080;
+    box-shadow: 0 5px #1f1e1e;
+    transform: translateY(4px);
+}
+
+.galaxy-container {
+    width: 1908px;
+    height: 1936px;
+    overflow: hidden;
+}
+
+.galaxy {
+    width: 100%;
+    height: 100%;
+    transform-origin: center center;
+    animation: spin 8s linear infinite;
+    animation-play-state: paused; 
+    right: -33%;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.galaxy-container:hover .galaxy {
+    animation-play-state: running;
+}
+
+.image-container {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#cccedImage {
+    margin-top: 350px;
+    margin-right: 150px;
+    z-index: 2;
+}
+
+#applyCCC {
+    margin-top: 60px;
+    margin-left: 1460px;
+    margin-right: 150px;
+}
+
+#entropy-animation {
+    margin-right: 128px;
+}
+
+#roulette-wheel {
+    margin-right: 256px;
+}
+
+.control-buttons {
+    margin-right:  150px;
 }

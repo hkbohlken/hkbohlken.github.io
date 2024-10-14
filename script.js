@@ -4,10 +4,20 @@ let spinning;
 let framePrefix = 'wheelsprite';
 let frameExtension = '.png';
 
+let cccedIndex = 0;
+const totalCCCEDImages = 10; 
+
 function preloadImages(totalFrames) {
     for (let i = 1; i <= totalFrames; i++) {
         const img = new Image();
         img.src = `entropysprite${i}.png`;
+    }
+}
+
+function preloadCCCEDImages() {
+    for (let i = 1; i <= totalCCCEDImages; i++) {
+        const img = new Image();
+        img.src = `images/ccced${i}.png`;
     }
 }
 
@@ -27,8 +37,8 @@ function stopSpin() {
 }
 
 function showByType(type) {
-    console.log('Showing type:', type); 
-    $('.animation').hide(); 
+    console.log('Showing type:', type);
+    $('.animation').hide();
     $('.animation').filter(function() {
         return $(this).data('type') === type;
     }).show();
@@ -65,14 +75,9 @@ function createStars(numStars) {
     }
 }
 
-document.getElementById('interactButton').addEventListener('click', function() {
-    document.getElementById('time-btn').style.display = 'inline-block';
-    document.getElementById('entropy-btn').style.display = 'inline-block';
-});
-
-
 $(document).ready(function() {
     preloadImages(totalFrames);
+    preloadCCCEDImages(); 
 
     createStars(100); 
 
@@ -89,6 +94,10 @@ $(document).ready(function() {
         showByType('entropy'); 
         $('#start-btn').hide();
         $('#stop-btn').hide();
+    });
+
+    $('#interactButton').click(function() {
+        $('#time-btn, #entropy-btn').css('display', 'inline-block');
     });
 
     const textParagraphs = [
@@ -136,4 +145,19 @@ $(document).ready(function() {
     }
 
     addNextCharacter(0, 0);
+
+    let cccedIndex = 0;
+
+$('#applyCCC').click(function() {
+    stopSpin();
+
+    const cccedImage = $('#cccedImage');
+    
+    cccedIndex++;
+    if (cccedIndex < totalCCCEDImages) {
+        cccedImage.attr('src', `ccced${cccedIndex + 1}.png`);
+    } else {
+        $(this).prop('disabled', true);
+    }
+});
 });

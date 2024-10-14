@@ -10,38 +10,54 @@
     <link href="https://fonts.googleapis.com/css2?family=Mate+SC&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="title">Boltzmann's Hypothesis</div>
-        <div class="expanded">Expanded</div>
-        <div class="lvb-container">
-            <div class="lvbexplained">Ludwig Boltzmann was an Austrian physicist and philosopher, born on February 20, 1844, in Vienna. 
-                He is best known for his foundational work in statistical mechanics and thermodynamics, which paved the way for modern physics.
-                Something Boltzmann is less well known for is his intriguing hypothesis regarding the eventual fate of the universe. 
-                He proposed that, given enough time, the universe would eventually reach a state of maximum entropy, often referred to as "heat death." 
-                In this scenario, energy would be evenly distributed, and no thermodynamic processes would be possible, leading to a static and featureless universe.
-                Heat death, or the "Big Freeze," is still widely regarded as one of the most popular end-universe scenarios among modern cosmologists. 
-                While Boltzmann is often credited with laying the foundations for this concept, he didn’t see heat death as the ultimate end of the universe. 
-                Rather, he viewed it as the beginning of a new chapter—what might appear to be the universe’s final state is, in fact, the start of a cycle.
+    <div class="flex-container">
+        <header>
+            <h1 class="title">Boltzmann's Hypothesis</h1>
+            <div class="expanded">Expanded</div>
+        </header>
+        
+        <main>
+            <div class="lvb-container">
+                <div class="lvbexplained">Ludwig Boltzmann was an Austrian physicist and philosopher, born on February 20, 1844, in Vienna. 
+                    He is best known for his foundational work in statistical mechanics and thermodynamics, which paved the way for modern physics.
+                    Something Boltzmann is less well known for is his intriguing hypothesis regarding the eventual fate of the universe. 
+                    He proposed that, given enough time, the universe would eventually reach a state of maximum entropy, often referred to as "heat death." 
+                    In this scenario, energy would be evenly distributed, and no thermodynamic processes would be possible, leading to a static and featureless universe.
+                    Heat death, or the "Big Freeze," is still widely regarded as one of the most popular end-universe scenarios among modern cosmologists. 
+                    While Boltzmann is often credited with laying the foundations for this concept, he didn't see heat death as the ultimate end of the universe. 
+                    Rather, he viewed it as the beginning of a new chapter—what might appear to be the universe's final state is, in fact, the start of a cycle.
+                </div>
+                <button id="interactButton">INTERACT</button>
             </div>
-            <button id="interactButton">Interact</button>
-        </div>
-    </div>
-        <div class="buttons">
-            <button id="time-btn" data-type="time">Time</button>
-            <button id="entropy-btn" data-type="entropy">Entropy</button>
-        </div>
-        <div id="content">
-            <img id="roulette-wheel" class="animation time" src="wheelsprite1.png" alt="Roulette Wheel" data-type="time">
-            <div id="entropy-animation" class="animation entropy" data-type="entropy">
-                <div class="entropy-frame"></div>
+            <div class="interaction-area">
+                <div class="buttons">
+                    <button id="time-btn" class="common-button" data-type="time">Time</button>
+                    <button id="entropy-btn" class="common-button" data-type="entropy">Entropy</button>
+                </div>
+                
+                <div id="content">
+                    <img id="roulette-wheel" class="animation time" src="wheelsprite1.png" alt="Roulette Wheel" data-type="time">
+                    <div id="entropy-animation" class="animation entropy" data-type="entropy">
+                        <div class="entropy-frame"></div>
+                    </div>
+                </div>
+                
+                <div class="control-buttons">
+                    <button id="start-btn" style="display: none;">Start</button>
+                    <button id="stop-btn" style="display: none;">Stop</button>
+                </div>
             </div>
-        </div>
-        <div class="control-buttons">
-            <button id="start-btn" style="display: none;">Start</button>
-            <button id="stop-btn" style="display: none;">Stop</button>
-        </div>
+            <div class="image-container">
+                <img id="cccedImage" src="ccced1.png" alt="CCC Image Preload">
+            </div>
+            <button id="applyCCC">Apply CCC</button>
+            <div class="galaxy-container">
+                <img src="galaxy.png" alt="Spiral Galaxy" class="galaxy">
+            </div>    
+        </main>
     </div>
 </body>
 </html>
