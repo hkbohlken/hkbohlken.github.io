@@ -1,3 +1,476 @@
+/* Layout Structure CSS */
+
+main {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 0 2rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.right-side {
+    flex: 0 0 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.interact-area {
+    position: absolute;
+}
+/* Interactables CSS */
+
+#time-btn, #entropy-btn {
+    color: rgb(255, 255, 255); 
+    font-size: 30px; 
+    line-height: 30px; 
+    padding: 10px; 
+    border-radius: 10px; 
+    font-weight: normal; 
+    text-decoration: none; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    background-image: linear-gradient(135deg, rgb(9, 75, 208) 0%, rgb(75, 241, 255) 25%, rgb(24, 76, 24) 100%); 
+    border: 2px solid rgb(28, 110, 164); 
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    display: none;
+}
+
+#time-btn:hover, #entropy-btn:hover {
+    color: rgb(255, 255, 255); 
+    font-size: 30px; 
+    line-height: 30px; 
+    padding: 10px; 
+    border-radius: 10px; 
+    font-weight: normal; 
+    text-decoration: none; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    background-image: linear-gradient(135deg, rgb(9, 75, 208) 0%, rgb(75, 241, 255) 50%, rgb(24, 76, 24) 100%); 
+    border: 2px solid rgb(28, 110, 164); 
+    display: inline-block;
+}
+
+#time-btn:active, #entropy-btn:active {
+    color: rgb(255, 255, 255); 
+    font-size: 30px; 
+    line-height: 30px; 
+    padding: 10px; 
+    border-radius: 10px; 
+    font-weight: normal; 
+    text-decoration: none; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    background-image: linear-gradient(135deg, rgb(9, 75, 208) 0%, rgb(75, 241, 255) 75%, rgb(24, 76, 24) 100%); 
+    border: 2px solid rgb(28, 110, 164); 
+    display: inline-block;
+}
+
+#applyCCC {
+    color: rgb(255, 255, 255); 
+    font-size: 35px; 
+    line-height: 35px; 
+    padding: 10px; 
+    border-radius: 10px; 
+    font-weight: normal; 
+    text-decoration: none; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    background-image: linear-gradient(135deg, rgb(9, 75, 208) 0%, rgb(75, 241, 255) 25%, rgb(24, 76, 24) 100%); 
+    border: 2px solid rgb(28, 110, 164); 
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+
+}
+
+#applyCCC:hover {
+    color: rgb(255, 255, 255); 
+    font-size: 35px; 
+    line-height: 35px; 
+    padding: 10px; 
+    border-radius: 10px; 
+    font-weight: normal; 
+    text-decoration: none; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    background-image: linear-gradient(135deg, rgb(9, 75, 208) 0%, rgb(75, 241, 255) 50%, rgb(24, 76, 24) 100%); 
+    border: 2px solid rgb(28, 110, 164); 
+    display: inline-block;
+}
+
+#applyCCC:active {
+    color: rgb(255, 255, 255); 
+    font-size: 35px; 
+    line-height: 35px; 
+    padding: 10px; 
+    border-radius: 10px; 
+    font-weight: normal; 
+    text-decoration: none; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    background-image: linear-gradient(135deg, rgb(9, 75, 208) 0%, rgb(75, 241, 255) 75%, rgb(24, 76, 24) 100%); 
+    border: 2px solid rgb(28, 110, 164); 
+    display: inline-block;
+}
+
+#start-btn, #stop-btn {
+    color: rgb(255, 255, 255); 
+    font-size: 25px; 
+    line-height: 25px; 
+    padding: 10px; 
+    border-radius: 10px; 
+    font-weight: normal; 
+    text-decoration: none; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    background-image: linear-gradient(135deg, rgb(9, 75, 208) 0%, rgb(75, 241, 255) 25%, rgb(24, 76, 24) 100%); 
+    border: 2px solid rgb(28, 110, 164); 
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+#start-btn:hover, #stop-btn:hover {
+    color: rgb(255, 255, 255); 
+    font-size: 25px; 
+    line-height: 25px; 
+    padding: 10px; 
+    border-radius: 10px; 
+    font-weight: normal; 
+    text-decoration: none; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    background-image: linear-gradient(135deg, rgb(9, 75, 208) 0%, rgb(75, 241, 255) 50%, rgb(24, 76, 24) 100%); 
+    border: 2px solid rgb(28, 110, 164); 
+    display: inline-block;
+}
+
+#start-btn:active, #stop-btn:active {
+    color: rgb(255, 255, 255); 
+    font-size: 25px; 
+    line-height: 25px; 
+    padding: 10px; 
+    border-radius: 10px; 
+    font-weight: normal; 
+    text-decoration: none; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    background-image: linear-gradient(135deg, rgb(9, 75, 208) 0%, rgb(75, 241, 255) 75%, rgb(24, 76, 24) 100%); 
+    border: 2px solid rgb(28, 110, 164); 
+    display: inline-block;
+}
+
+#interactButton {
+    color: rgb(255, 255, 255); 
+    font-size: 40px; 
+    line-height: 40px; 
+    padding: 10px; 
+    border-radius: 10px; 
+    font-weight: normal; 
+    text-decoration: none; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    background-image: linear-gradient(135deg, rgb(9, 75, 208) 0%, rgb(75, 241, 255) 25%, rgb(24, 76, 24) 100%); 
+    border: 2px solid rgb(28, 110, 164); 
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+#interactButton:hover {
+    color: rgb(255, 255, 255); 
+    font-size: 40px; 
+    line-height: 40px; 
+    padding: 10px; 
+    border-radius: 10px; 
+    font-weight: normal; 
+    text-decoration: none; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    background-image: linear-gradient(135deg, rgb(9, 75, 208) 0%, rgb(75, 241, 255) 50%, rgb(24, 76, 24) 100%); 
+    border: 2px solid rgb(28, 110, 164); 
+    display: inline-block;
+}
+
+#interactButton:active {
+    color: rgb(255, 255, 255); 
+    font-size: 40px; 
+    line-height: 40px; 
+    padding: 10px; 
+    border-radius: 10px; 
+    font-weight: normal; 
+    text-decoration: none; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    background-image: linear-gradient(135deg, rgb(9, 75, 208) 0%, rgb(75, 241, 255) 75%, rgb(24, 76, 24) 100%); 
+    border: 2px solid rgb(28, 110, 164); 
+    display: inline-block;
+}
+
+
+
+#cccedImage {
+    z-index: 2;
+}
+
+#roulette-wheel {
+    width: 300px;
+    height: 300px;
+    border: 3px solid #fff;
+    border-radius: 8px;
+    display: none;
+    z-index: 2;
+}
+
+#entropy-animation {
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    animation: entropyAnimation 2s steps(6) infinite;
+    display: none;
+    z-index: 2;
+}
+
+/* Header/Title CSS */
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+.title {
+    font-size: 96px;
+    color: #fff;
+    font-family: "Mate SC", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow: 2px 2px 4px black;
+}
+
+@keyframes expandAnimation {
+    0% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(1.25);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.expanded {
+    display: inline-block;
+    font-size: 96px;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-shadow: 2px 2px 4px black;
+    font-family: "Mate SC", serif;
+    font-weight: 400;
+    animation: expandAnimation 12s ease-in-out infinite;
+}
+
+.subtitle {
+    font-size: 24px;
+    font-family: 'Playfair Display SC', serif;
+    color: #fff;
+}
+
+/* Tooltip CSS */
+
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.formula {
+    position: absolute;
+    bottom: 550px;
+    left: 250px;
+    right: 0;
+    z-index: 3;
+    background: transparent;
+    padding: 10px 0;
+    font-size: 48px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.tooltip {
+    position: relative;
+    cursor: pointer;
+    left: 100px;
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #6f00a3;
+    color: #fff;
+    padding: 12px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    white-space: pre;
+    font-size: 24px;
+    border: 2px solid #0d0647;
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* LVB Text CSS */
+
+.lvb-container {
+    min-height: 70vh;
+}
+
+.textbody {
+    margin-bottom: 5px;
+}
+
+.fade-letter {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.lvbexplained {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    top: 450px; /* Position from top */
+    left: 50px;
+    right: 0;
+    text-align: left;
+    max-width: 100%;
+    overflow-y: auto;
+    max-height: 60vh;
+    padding-bottom: 80px;
+}
+
+/* Mobile Optimization CSS */
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 48px;
+    }
+
+    .expanded {
+        font-size: 48px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+
+    .lvb-container {
+        align-items: center;
+    }
+
+    .lvbexplained {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    #interactButton {
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 36px;
+    }
+
+    .expanded {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    #roulette-wheel {
+        max-width: 200px;
+    }
+
+    #entropy-animation {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Galaxy CSS */
+
+.galaxy-container {
+    width: 1908/2px;
+    height: 1936/2px;
+    overflow: hidden;
+}
+
+.galaxy {
+    width: 100%;
+    height: 100%;
+    transform-origin: center center;
+    animation: spin 8s linear infinite;
+    animation-play-state: paused;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.galaxy-container:hover .galaxy {
+    animation-play-state: running;
+}
+
+/* Background CSS */
 @keyframes spaceAnimation {
     0% {
         background-position: 0% 0%;
@@ -123,228 +596,6 @@ body::after {
     will-change: opacity, transform;
 }
 
-.flex-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    flex-shrink: 0;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    position: relative;
-    overflow: hidden;
-}
-
-.lvb-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    z-index: 2;
-    margin-bottom: 20px;
-}
-
-.interaction-area {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.buttons {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    margin-bottom: 20px;
-    position: absolute;
-}
-
-#roulette-wheel {
-    width: 100%;
-    max-width: 256px;
-    height: auto;
-    border: 3px solid #fff;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    display: none;
-    position: relative;
-    z-index: 2;
-    margin-top: 350px;
-}
-
-#entropy-animation {
-    width: 300px;
-    height: 300px;
-    background-size: cover;
-    animation: entropyAnimation 2s steps(6) infinite;
-    display: none;
-    position: relative;
-    z-index: 2;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 350px;
-    margin-bottom: 0;
-}
-
-button {
-    padding: 6px 24px;
-    font-family: "Mate SC", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 24px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 3;
-}
-
-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-button:active {
-    background-color: #004080;
-    transform: scale(0.95);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.title {
-    font-size: 96px;
-    color: #fff;
-    font-family: "Mate SC", serif;
-    font-weight: 400;
-    font-style: normal;
-    text-shadow: 2px 2px 4px black;
-}
-
-@keyframes expandAnimation {
-    0% {
-        transform: scaleX(1);
-    }
-    50% {
-        transform: scaleX(1.25);
-    }
-    100% {
-        transform: scaleX(1);
-    }
-}
-
-.expanded {
-    display: inline-block;
-    font-size: 96px;
-    color: #fff;
-    text-align: center;
-    overflow: hidden;
-    white-space: nowrap;
-    text-shadow: 2px 2px 4px black;
-    font-family: "Mate SC", serif;
-    font-weight: 400;
-    animation: expandAnimation 12s ease-in-out infinite;
-}
-
-.subtitle {
-    font-size: 24px;
-    font-family: 'Playfair Display SC', serif;
-    color: #fff;
-}
-
-.italic {
-    font-style: italic;
-    font-size: 24px;
-    font-family: 'Playfair Display SC', serif;
-    color: #fff;
-    margin-top: 0;
-    margin-bottom: 75px;
-}
-
-.italicquote1 {
-    font-style: italic;
-    font-size: 24px;
-    font-family: 'Playfair Display SC', serif;
-    color: #fff;
-    margin-top: 0;
-    max-width: 400px;
-    padding-left: 50px;
-    text-align: left;
-    letter-spacing: 2px;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-    animation-delay: 4s;
-}
-
-.textbody {
-    margin-bottom: 5px;
-}
-
-.fade-letter {
-    display: inline-block;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-}
-
-.lvbexplained {
-    visibility: hidden;
-    opacity: 0;
-    margin-top: 50px;
-    text-align: left;
-    margin-bottom: 20px;
-    max-width: 800px;
-    overflow-y: auto;
-    max-height: 60vh;
-}
-
-#interactButton {
-    align-self: flex-end;
-    cursor: pointer;
-    margin-top: 64px;
-    margin-right: 150px;
-    width: 256px;
-    padding: 32px;
-    font-size: 32px;
-    border-radius: 64px;
-    font-weight: bolder;
-    font-family: "Gotu", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    border: none; 
-    color: white;
-    background: linear-gradient(45deg, #007bff, #0056b3, #004080); 
-    background-size: 300% 300%;
-    animation: gradientAnimation 3s ease infinite; 
-    position: absolute;
-}
-
-#interactButton:hover {
-    background-color: #0056b3;
-}
-
-#interactButton:active {
-    background-color: #004080;
-    box-shadow: 0 5px #1f1e1e;
-    transform: translateY(4px);
-}
-
 @keyframes gradientAnimation {
     0% {
         background-position: 0% 50%;
@@ -355,166 +606,4 @@ button:active {
     100% {
         background-position: 0% 50%;
     }
-}
-
-#time-btn, #entropy-btn {
-    display: none;
-    width: 256px;
-}
-#entropy-btn {
-    margin-top: 200px;
-
-}
-@media (max-width: 768px) {
-    .title {
-        font-size: 48px;
-    }
-
-    .expanded {
-        font-size: 48px;
-    }
-
-    .subtitle {
-        font-size: 18px;
-    }
-
-    button {
-        font-size: 18px;
-        padding: 8px 16px;
-    }
-
-    .lvb-container {
-        align-items: center;
-    }
-
-    .lvbexplained {
-        padding-right: 0;
-        text-align: center;
-    }
-
-    #interactButton {
-        align-self: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .title {
-        font-size: 36px;
-    }
-
-    .expanded {
-        font-size: 36px;
-    }
-
-    .subtitle {
-        font-size: 16px;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 6px 12px;
-    }
-
-    #roulette-wheel {
-        max-width: 200px;
-    }
-
-    #entropy-animation {
-        width: 200px;
-        height: 200px;
-    }
-}
-
-.control-buttons {
-    margin-left: 1300px;
-    margin-top: 32px;
-}
-
-#time-btn {
-    margin-left: 100px;
-    margin-right: 32px;
-}
-
-.common-button {
-    align-self: flex-end;
-    cursor: pointer;
-    padding: 24px;
-    font-size: 32px;
-    border-radius: 64px;
-    font-weight: bolder;
-    font-family: "Gotu", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    border: none;
-    color: white; 
-    background: linear-gradient(45deg, #007bff, #0056b3, #004080); 
-    background-size: 300% 300%;
-    animation: gradientAnimation 3s ease infinite; 
-}
-
-.common-button:hover {
-    background-color: #0056b3;
-}
-
-.common-button:active {
-    background-color: #004080;
-    box-shadow: 0 5px #1f1e1e;
-    transform: translateY(4px);
-}
-
-.galaxy-container {
-    width: 1908px;
-    height: 1936px;
-    overflow: hidden;
-}
-
-.galaxy {
-    width: 100%;
-    height: 100%;
-    transform-origin: center center;
-    animation: spin 8s linear infinite;
-    animation-play-state: paused; 
-    right: -33%;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-.galaxy-container:hover .galaxy {
-    animation-play-state: running;
-}
-
-.image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-#cccedImage {
-    margin-top: 350px;
-    margin-right: 150px;
-    z-index: 2;
-}
-
-#applyCCC {
-    margin-top: 60px;
-    margin-left: 1460px;
-    margin-right: 150px;
-}
-
-#entropy-animation {
-    margin-right: 128px;
-}
-
-#roulette-wheel {
-    margin-right: 256px;
-}
-
-.control-buttons {
-    margin-right:  150px;
 }

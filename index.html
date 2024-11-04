@@ -13,13 +13,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="flex-container">
-        <header>
-            <h1 class="title">Boltzmann's Hypothesis</h1>
-            <div class="expanded">Expanded</div>
-        </header>
-        
-        <main>
+    <header>
+        <h1 class="title">Boltzmann's Hypothesis</h1>
+        <div class="expanded">Expanded</div>
+    </header>
+    <main>
+        <div class="left-side"></div>
             <div class="lvb-container">
                 <div class="lvbexplained">Ludwig Boltzmann was an Austrian physicist and philosopher, born on February 20, 1844, in Vienna. 
                     He is best known for his foundational work in statistical mechanics and thermodynamics, which paved the way for modern physics.
@@ -30,21 +29,34 @@
                     While Boltzmann is often credited with laying the foundations for this concept, he didn't see heat death as the ultimate end of the universe. 
                     Rather, he viewed it as the beginning of a new chapter—what might appear to be the universe's final state is, in fact, the start of a cycle.
                 </div>
-                <button id="interactButton">INTERACT</button>
+                <div class="formula">
+                    <span class="tooltip" id="lim " data-tooltip="Refers to the limit, which is the value that a function 
+approaches as the input gets closer to a specific point or infinity.">lim</span>
+                    <sub>
+                    <span class="tooltip" id="ntrend" data-tooltip="Represents the number of trials or opportunities for a specific event, 
+increasing without bound or approaching infinity.">n→∞</span>
+                    </sub>
+                    <span class="tooltip" id="probability"data-tooltip="Denotes the probability of the event E occurring in the n-th trial, 
+reflecting the likelihood of that event under the given circumstances.">P(E<sub>n</sub>)</span>
+                    <span class="tooltip" id="certainty" data-tooltip="Signifies that the probability converges to 1 (or 100%), 
+meaning the event is almost certain to occur 
+as the number of opportunities increases indefinitely.">= 1</span>
+                </div>
             </div>
+        </div>
+        <div class="right-side">
             <div class="interaction-area">
+                <button id="interactButton">Interact</button>
                 <div class="buttons">
                     <button id="time-btn" class="common-button" data-type="time">Time</button>
                     <button id="entropy-btn" class="common-button" data-type="entropy">Entropy</button>
                 </div>
-                
                 <div id="content">
                     <img id="roulette-wheel" class="animation time" src="wheelsprite1.png" alt="Roulette Wheel" data-type="time">
                     <div id="entropy-animation" class="animation entropy" data-type="entropy">
                         <div class="entropy-frame"></div>
                     </div>
                 </div>
-                
                 <div class="control-buttons">
                     <button id="start-btn" style="display: none;">Start</button>
                     <button id="stop-btn" style="display: none;">Stop</button>
@@ -56,8 +68,8 @@
             <button id="applyCCC">Apply CCC</button>
             <div class="galaxy-container">
                 <img src="galaxy.png" alt="Spiral Galaxy" class="galaxy">
-            </div>    
-        </main>
-    </div>
+            </div>  
+        </div>  
+    </main>
 </body>
 </html>
