@@ -1,163 +1,138 @@
-let frameIndex = 0;
-let totalFrames = 16;
-let spinning;
-let framePrefix = 'wheelsprite';
-let frameExtension = '.png';
+$(document).ready(function () {
 
-let cccedIndex = 0;
-const totalCCCEDImages = 10; 
+    const icons = {
+        taylor: ['acoustic'],
+        chappell: ['unicorn'],
+        lana: ['cherry']
+    };
 
-function preloadImages(totalFrames) {
-    for (let i = 1; i <= totalFrames; i++) {
-        const img = new Image();
-        img.src = `entropysprite${i}.png`;
-    }
-}
-
-function preloadCCCEDImages() {
-    for (let i = 1; i <= totalCCCEDImages; i++) {
-        const img = new Image();
-        img.src = `images/ccced${i}.png`;
-    }
-}
-
-function startSpin() {
-    if (!spinning) {
-        spinning = setInterval(function() {
-            frameIndex = (frameIndex + 1) % totalFrames;
-            let newFrame = framePrefix + (frameIndex + 1) + frameExtension;
-            $('#roulette-wheel').attr('src', newFrame);
-        }, 50);
-    }
-}
-
-function stopSpin() {
-    clearInterval(spinning);
-    spinning = null;
-}
-
-function showByType(type) {
-    console.log('Showing type:', type);
-    $('.animation').hide();
-    $('.animation').filter(function() {
-        return $(this).data('type') === type;
-    }).show();
-}
-
-function createStars(numStars) {
-    for (let i = 0; i < numStars; i++) {
-        let star = $('<div class="star"></div>');
-        let x = Math.random() * 100; 
-        let y = Math.random() * 100; 
-        let size = Math.random() * 2 + 1;
-        let animationDuration = Math.random() * 2 + 1;
-        let animationDelay = Math.random() * 5;
-        let opacity = Math.random() * 0.5 + 0.5;
-        let colors = ['#ffffff', '#ffe9c4', '#d4fbff'];
-        let color = colors[Math.floor(Math.random() * colors.length)];
-
-        star.css({
-            background: color,
-            opacity: opacity,
-            left: `${x}%`,
-            top: `${y}%`,
-            width: `${size}px`,
-            height: `${size}px`,
-            animationDuration: `${animationDuration}s`,
-            animationDelay: `${animationDelay}s`,
-            '--twinkle-duration': `${animationDuration}s`,
-            '--twinkle-delay': `${animationDelay}s`,
-            '--drift-duration': `${animationDuration * 5}s`,
-            '--drift-delay': `${animationDelay}s`,
-        });
-
-        $('body').append(star);
-    }
-}
-
-$(document).ready(function() {
-    preloadImages(totalFrames);
-    preloadCCCEDImages(); 
-
-    createStars(100); 
-
-    $('#start-btn').click(startSpin);
-    $('#stop-btn').click(stopSpin);
-
-    $('#time-btn').click(function() {
-        showByType('time'); 
-        $('#start-btn').show();
-        $('#stop-btn').show();
+    $('#glasses').on('click', function() {
+        window.location.href = "https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02";
     });
 
-    $('#entropy-btn').click(function() {
-        showByType('entropy'); 
-        $('#start-btn').hide();
-        $('#stop-btn').hide();
+    $('#jeans').on('click', function() {
+        window.location.href = "https://open.spotify.com/artist/00FQb4jTyendYWaN8pK0wa"; 
     });
 
-    $('#interactButton').click(function() {
-        $('#time-btn, #entropy-btn').css('display', 'inline-block');
+    $('#hat').on('click', function() {
+        window.location.href = "https://open.spotify.com/artist/7GlBOeep6PqTfFi59PTUUN"; 
     });
 
-    const textParagraphs = [
-        "Ludwig Boltzmann was an Austrian physicist and philosopher, born on February 20, 1844, in Vienna.", 
-        "He is best known for his foundational work in statistical mechanics and thermodynamics, which paved the way for modern physics.",
-        "Something Boltzmann is less well known for is his intriguing hypothesis regarding the eventual fate of the universe.", 
-        "He proposed that, given enough time, the universe would eventually reach a state of maximum entropy, often referred to as 'heat death.'", 
-        "In this scenario, energy would be evenly distributed, and no thermodynamic processes would be possible, leading to a static and featureless universe.",
-        "Heat death, or the 'Big Freeze,' is still widely regarded as one of the most popular end-universe scenarios among modern cosmologists.", 
-        "While Boltzmann is often credited with laying the foundations for this concept, he didn't see heat death as the ultimate end of the universe.",
-        "Rather, he viewed it as the beginning of a new chapter—what might appear to be the universe's final state is, in fact, the start of a cycle."
-    ];
+    function createRadialFallingIcons(event, iconType, sectionId) {
+        const section = $(`#${sectionId}`);
+        const image = section.find('img');
+        
+        const imageOffset = image.offset();
+        const imageWidth = image.width();
+        const imageHeight = image.height();
 
-    $('.lvbexplained').empty().css('visibility', 'visible').css('opacity', 1);
+        const centerX = imageOffset.left + imageWidth / 2;
+        const centerY = imageOffset.top + imageHeight * 0.1;
 
-    function addNextCharacter(paragraphIndex, charIndex) {
-        if (paragraphIndex < textParagraphs.length) {
-            const characters = textParagraphs[paragraphIndex].split('');
+        const numIcons = 20; 
+
+        for (let i = 0; i < numIcons; i++) { 
+            const selectedIcons = icons[iconType];
+            const icon = $('<img>').addClass('falling-icon');
+            const randomIcon = selectedIcons[Math.floor(Math.random() * selectedIcons.length)];
+            icon.attr('src', `${randomIcon}.png`);
+
+            const angle = Math.random() * Math.PI * 2;
+            const burstRadius = Math.random() * 200 + 50;
             
-            if (charIndex < characters.length) {
-                let span;
-                if (characters[charIndex] === ' ') {
-                    span = $('<span class="fade-letter">&nbsp;</span>').css('margin-right', '0.25em');
-                } else {
-                    span = $('<span class="fade-letter"></span>').text(characters[charIndex]);
+            const burstX = centerX + Math.cos(angle) * burstRadius;
+            const burstY = centerY + Math.sin(angle) * burstRadius;
+
+            icon.css({
+                left: `${burstX}px`,
+                top: `${burstY}px`,
+                position: 'absolute',
+                opacity: 1,
+                transform: 'scale(1.5)'
+            });
+
+            const fallDuration = Math.random() * 3000 + 2000;
+            const rotationDegree = Math.random() * 360;
+            
+            $('body').append(icon);
+
+            icon.animate({
+                top: `${imageOffset.top + imageHeight + 100}px`,
+                left: `${burstX + (Math.random() - 0.5) * 100}px`,
+                rotate: `${rotationDegree}deg`,
+                opacity: 0
+            }, {
+                duration: fallDuration,
+                easing: 'easeOutQuad',
+                complete: function() {
+                    $(this).remove();
                 }
-                $('.lvbexplained').append(span);
-                
-                span.css('opacity', 0).animate({ opacity: 1 }, {
-                    duration: 1500,
-                    easing: 'swing',
-                    queue: false
-                });
-                
-                setTimeout(function() {
-                    addNextCharacter(paragraphIndex, charIndex + 1);
-                }, 25);
-            } else {
-                $('.lvbexplained').append('<br><br>');
-                setTimeout(function() {
-                    addNextCharacter(paragraphIndex + 1, 0);
-                }, 500);
-            }
+            });
         }
     }
 
-    addNextCharacter(0, 0);
+    $('#taylor').on('mouseover', function (event) {
+        createRadialFallingIcons(event, 'taylor', 'taylor');
+    });
 
-    let cccedIndex = 0;
+    $('#chappell').on('mouseover', function (event) {
+        createRadialFallingIcons(event, 'chappell', 'chappell');
+    });
 
-$('#applyCCC').click(function() {
-    stopSpin();
+    $('#lana').on('mouseover', function (event) {
+        createRadialFallingIcons(event, 'lana', 'lana');
+    });
 
-    const cccedImage = $('#cccedImage');
-    
-    cccedIndex++;
-    if (cccedIndex < totalCCCEDImages) {
-        cccedImage.attr('src', `ccced${cccedIndex + 1}.png`);
-    } else {
-        $(this).prop('disabled', true);
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('header').css('background-color', '#bf8cf3');
+        } else {
+            $('header').css('background-color', '#ff69b4');
+        }
+    });
+
+    var tayFunFacts = [
+        "Here is a fun fact! Taylor Swift has a cat named Olivia Benson.",
+        "Here is a fun fact! Swift is the youngest solo artist to win Album of the Year and the first female artist to win it three times.",
+        "Here is a fun fact! Taylor Swift grew up on a Christmas tree farm." 
+    ];
+
+    var chapFunFacts = [
+        "Here is a fun fact! Chappell Roan’s real name is Kayleigh Amstutz",
+        "Here is a fun fact! Chappell Roan's stage and fashion presence has been inspired by drag queens.",
+        "Here is a fun fact! Roan grew up in Willard, Missouri."
+    ];
+
+    var lanaFunFacts = [
+        "Here is a fun fact! Lana Del Rey's real name is Elizabeth Woolridge Grant.",
+        "Here is a fun fact! Lana Del Rey spent a substantial amount of time living and writing in the UK.",
+        "Here is a fun fact! Lana Del Rey recently married a swamp boat captain."
+    ];
+
+    function getRandomFact(factsArray) {
+        var randomIndex = Math.floor(Math.random() * factsArray.length);
+        return factsArray[randomIndex];
     }
-});
+
+    $('#tayfact').text(getRandomFact(tayFunFacts));
+
+    $('#chapfact').text(getRandomFact(chapFunFacts));
+
+    $('#lanafact').text(getRandomFact(lanaFunFacts));
+
+    $('#tayfactbtn').click(function() {
+        $('#tayfact').text(getRandomFact(tayFunFacts));
+    });
+
+    $('#chapfactbtn').click(function() {
+        $('#chapfact').text(getRandomFact(chapFunFacts));
+    });
+
+    $('#lanafactbtn').click(function() {
+        $('#lanafact').text(getRandomFact(lanaFunFacts));
+    });
+
+    $('#giftsec img').on('click', function () {
+        $(this).toggleClass('clicked');
+    }); 
 });

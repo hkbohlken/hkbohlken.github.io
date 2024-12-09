@@ -3,73 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boltzmann's Hypothesis Expanded</title>
+    <title>Pop Queens of Our Time</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="script.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gotu&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gotu&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gotu&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1 class="title">Boltzmann's Hypothesis</h1>
-        <div class="expanded">Expanded</div>
+        <h1 id="thetitle">Modern Pop Icons</h1>
+        <nav>
+            <ul>
+                <li><a href="#taylor">Taylor Swift</a></li>
+                <li><a href="#chappell">Chappell Roan</a></li>
+                <li><a href="#lana">Lana Del Rey</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <div class="left-side"></div>
-            <div class="lvb-container">
-                <div class="lvbexplained">Ludwig Boltzmann was an Austrian physicist and philosopher, born on February 20, 1844, in Vienna. 
-                    He is best known for his foundational work in statistical mechanics and thermodynamics, which paved the way for modern physics.
-                    Something Boltzmann is less well known for is his intriguing hypothesis regarding the eventual fate of the universe. 
-                    He proposed that, given enough time, the universe would eventually reach a state of maximum entropy, often referred to as "heat death." 
-                    In this scenario, energy would be evenly distributed, and no thermodynamic processes would be possible, leading to a static and featureless universe.
-                    Heat death, or the "Big Freeze," is still widely regarded as one of the most popular end-universe scenarios among modern cosmologists. 
-                    While Boltzmann is often credited with laying the foundations for this concept, he didn't see heat death as the ultimate end of the universe. 
-                    Rather, he viewed it as the beginning of a new chapter—what might appear to be the universe's final state is, in fact, the start of a cycle.
-                </div>
-                <div class="formula">
-                    <span class="tooltip" id="lim " data-tooltip="Refers to the limit, which is the value that a function 
-approaches as the input gets closer to a specific point or infinity.">lim</span>
-                    <sub>
-                    <span class="tooltip" id="ntrend" data-tooltip="Represents the number of trials or opportunities for a specific event, 
-increasing without bound or approaching infinity.">n→∞</span>
-                    </sub>
-                    <span class="tooltip" id="probability"data-tooltip="Denotes the probability of the event E occurring in the n-th trial, 
-reflecting the likelihood of that event under the given circumstances.">P(E<sub>n</sub>)</span>
-                    <span class="tooltip" id="certainty" data-tooltip="Signifies that the probability converges to 1 (or 100%), 
-meaning the event is almost certain to occur 
-as the number of opportunities increases indefinitely.">= 1</span>
+        <section id="taylorsec">
+            <div id="taylor">
+                <h2 id="TS">Taylor Swift</h2>
+                <img src="taylor1.jpg" alt="Taylor Swift">
+                <div id="tayfactcont">
+                    <p id="tayfact">Here is a fun fact! Taylor Swift grew up on a Christmas tree farm.</p>
+                    <button id="tayfactbtn">New Fact</button>
                 </div>
             </div>
-        </div>
-        <div class="right-side">
-            <div class="interaction-area">
-                <button id="interactButton">Interact</button>
-                <div class="buttons">
-                    <button id="time-btn" class="common-button" data-type="time">Time</button>
-                    <button id="entropy-btn" class="common-button" data-type="entropy">Entropy</button>
-                </div>
-                <div id="content">
-                    <img id="roulette-wheel" class="animation time" src="wheelsprite1.png" alt="Roulette Wheel" data-type="time">
-                    <div id="entropy-animation" class="animation entropy" data-type="entropy">
-                        <div class="entropy-frame"></div>
-                    </div>
-                </div>
-                <div class="control-buttons">
-                    <button id="start-btn" style="display: none;">Start</button>
-                    <button id="stop-btn" style="display: none;">Stop</button>
+        </section>
+        <section id="chappellsec">
+            <div id="chappell">
+                <h2 id="CR">Chappell Roan</h2>
+                <img src="chappell1.jpg" alt="Chappell Roan">
+                <div id="chapfactcont">
+                    <p id="chapfact">Here is a fun fact! Taylor Swift grew up on a Christmas tree farm.</p>
+                    <button id="chapfactbtn">New Fact</button>
                 </div>
             </div>
-            <div class="image-container">
-                <img id="cccedImage" src="ccced1.png" alt="CCC Image Preload">
+        </section>
+        <section id="lanasec">
+            <div id="lana">
+                <h2 id="LDR">Lana Del Rey</h2>
+                <img src="lana1.jpg" alt="Lana Del Rey">
+                <div id="lanafactcont">
+                    <p id="lanafact">Here is a fun fact! Lana Del Rey's real name is Elizabeth Woolridge Grant.</p>
+                    <button id="lanafactbtn">New Fact</button>
+                </div>
             </div>
-            <button id="applyCCC">Apply CCC</button>
-            <div class="galaxy-container">
-                <img src="galaxy.png" alt="Spiral Galaxy" class="galaxy">
-            </div>  
-        </div>  
+        </section>
+<section id="giftsec">
+    <h1 id="spotifymsg">Find the hidden Spotify links!</h4>
+    <div class="giftstack">
+        <img src="taybox.png" alt="Taylor Swift gift box" id="taybox">
+        <img src="glasses.png" alt="Heart-shaped glasses" id="glasses">
+    </div>
+    <div class="giftstack">
+        <img src="chapbox.png" alt="Chappell Roan gift box" id="chapbox">
+        <img src="hat.png" alt="Pink cowboy hat" id="hat">
+    </div>
+    <div class="giftstack">
+        <img src="lanabox.png" alt="Lana Del Rey gift box" id="lanabox">
+        <img src="jeans.png" alt="Illustrated pair of blue jeans" id="jeans">
+    </div>
+</section>
     </main>
+    <footer>
+        <p>Image Credits:</p>
+        <ul>
+            <li>Taylor Swift: [Photo by iHeartRadioCA, used under CC BY 3.0 / Cropped from original.]</li>
+            <li>Chappell Roan: [Justin Higuchi - Chappell Roan @ Hollywood Palladium 11/18/2022]</li>
+            <li>Lana Del Rey: [Raph_PH - LanaDRPrimavera310524]</li>
+            <li>Egg PNG heart-shaped glasses. Available at https://www.pngegg.com/en/png-bfwpq. License: Non-commercial use.
+            <li>Egg PNG pink cowboy hat. Available at https://www.pngegg.com/en/png-psejh. License: Non-commercial use.
+            <li>Egg PNG pink gift box. Available at https://www.pngegg.com/en/png-bkddp. License: Non-commercial use.
+            <li>Egg PNG red gift box. Available at https://www.pngegg.com/en/png-bduwz. License: Non-commercial use.
+            <li>Egg PNG blue gift box. Available at https://www.pngegg.com/en/png-yydfs. License: Non-commercial use.
+            </li>
+        </ul>
+        <a href="https://www.flaticon.com/free-icons/acoustic-guitar" title="acoustic guitar icons">Acoustic guitar icons created by Freepik - Flaticon</a>
+        <a href="https://www.flaticon.com/free-icons/unicorn" title="unicorn icons">Unicorn icons created by Smashicons - Flaticon</a>
+        <a href="https://www.flaticon.com/free-icons/slot-machine" title="slot machine icons">Slot machine icons created by IconsNova - Flaticon</a>
+        <a href="https://www.flaticon.com/free-stickers/necklace" title="necklace stickers">Necklace stickers created by Ina Mella - Flaticon</a>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
